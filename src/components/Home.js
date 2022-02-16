@@ -1,17 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import Section from "./Section";
-
-import {AdvancedImage} from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
 
 function Home() {
-    
-    const cld = new Cloudinary({
-        cloud: {
-          cloudName: 'djw9lea2q'
-        }
-      });
 
     return (
         <Container>

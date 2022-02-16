@@ -16,7 +16,7 @@ function List() {
     let mark = query.get("brand");
 
     const loadMotos = async () => {
-        const response = await fetch('http://localhost:4000/get-motos')
+        const response = await fetch('https://backend-node.azurewebsites.net:4000/get-motos')
         const data = await response.json()
         setMotos(data);
     }

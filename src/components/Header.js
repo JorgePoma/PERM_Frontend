@@ -12,11 +12,11 @@ function Header() {
     const motos = useSelector(selectMotos);
     const brands= ["suzuki", "yamaha", "honda", "ktm" ,"harley-davidson" ]
 
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
     
     return (
         <Container >
-            <a translate='no'>
+            <a translate='no' href='#'>
                 <Link to={'/'}>
                     <Logo > Mo | Ma </Logo>
                 </Link>
@@ -38,13 +38,13 @@ function Header() {
                     <CustomClose src="https://img.icons8.com/ios/24/000000/chevron-right.png" onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
                 <Link to={'/user/profile'}><li>My account</li></Link>
-                <li className='title'><a href="">TYPES</a></li>
+                <li className='title'><a href="#">TYPES</a></li>
                 {motos && motos.map((moto, index) => (
                     <Link to={`/details?type=${moto}`} key={index}>
                         <li>{moto}</li>
                     </Link>
                 ))}
-                <li className='title'><a href="">BRANDS</a></li>
+                <li className='title'><a href="#">BRANDS</a></li>
                 <Link to ={`/details?brand=${brands[0]}`}><li>Suzuki</li></Link>
                 <Link to ={`/details?brand=${brands[1]}`}><li>Yamaha</li></Link>
                 <Link to ={`/details?brand=${brands[2]}`}><li>Honda</li></Link>
