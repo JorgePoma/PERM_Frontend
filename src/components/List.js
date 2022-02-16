@@ -16,20 +16,20 @@ function List() {
     let mark = query.get("brand");
 
     const loadMotos = async () => {
-        const response = await fetch('https://backend-node.azurewebsites.net:4000/get-motos')
+        const response = await fetch('https://backend-node.azurewebsites.net/get-motos')
         const data = await response.json()
         setMotos(data);
     }
 
     const loadMotosType = async () => {
-        const response = await fetch(`http://localhost:4000/get-motos/type/${type}`)
+        const response = await fetch(`https://backend-node.azurewebsites.net/get-motos/type/${type}`)
         const data = await response.json()
         setMotos(data);
         console.log(data);
     }
 
     const loadMotosBrand = async () => {
-        const response = await fetch(`http://localhost:4000/get-motos/mark/${mark}`)
+        const response = await fetch(`https://backend-node.azurewebsites.net/get-motos/mark/${mark}`)
         const data = await response.json()
         setMotos(data);
         console.log(data);
@@ -38,7 +38,7 @@ function List() {
     const saveMotoUsuario = async (correo, model) => {
         console.log(correo, model);
         Mot = { correo: correo, model: model };
-        const response = await fetch(`http://localhost:4000/save-moto`, {
+        const response = await fetch(`https://backend-node.azurewebsites.net/save-moto`, {
             method: "POST",
             body: JSON.stringify(Mot),
             headers: { "Content-Type": "application/json" },

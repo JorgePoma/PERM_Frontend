@@ -18,21 +18,21 @@ function ListUnsave() {
 
     const loadMotos = async (correo) => {
         let email = user.email;
-        const response = await fetch(`http://localhost:4000/listsave-moto/${email}`);
+        const response = await fetch(`https://backend-node.azurewebsites.net/listsave-moto/${email}`);
         const data = await response.json()
         console.log(data)
         setMotos(data);
     }
 /*
     const loadMotosType = async () => {
-        const response = await fetch(`http://localhost:4000/get-motos/type/${type}`)
+        const response = await fetch(`https://backend-node.azurewebsites.net:4000/get-motos/type/${type}`)
         const data = await response.json()
         setMotos(data);
         console.log(data);
     }
 
     const loadMotosBrand = async () => {
-        const response = await fetch(`http://localhost:4000/get-motos/mark/${mark}`)
+        const response = await fetch(`https://backend-node.azurewebsites.net:4000/get-motos/mark/${mark}`)
         const data = await response.json()
         setMotos(data);
         console.log(data);
@@ -41,7 +41,7 @@ function ListUnsave() {
     const UnsaveMotoUsuario = async (correo, model) => {
         console.log(correo, model);
         Mot = { correo: correo ,model: model};
-        const response = await fetch(`http://localhost:4000/unsave-moto`, {
+        const response = await fetch(`https://backend-node.azurewebsites.net/unsave-moto`, {
             method: "POST",
             body: JSON.stringify(Mot),
             headers: { "Content-Type": "application/json" },
