@@ -28,4 +28,4 @@ jobs:
         with:
           app-name: 'MotoMarket'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_043BFD92A69F499F82FFBE8280E5AD62 }}
-          package: Build
+          package: .
