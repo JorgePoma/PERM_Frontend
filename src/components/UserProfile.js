@@ -17,7 +17,7 @@ function UserProfile() {
       <Data>
         <Imagen>
           <h3>Foto de perfil</h3>
-          <img src={user.picture} alt=""></img>
+          <img src={user.picture}></img>
         </Imagen>
         <Account>
         <h3>Nombre de usuario</h3>
